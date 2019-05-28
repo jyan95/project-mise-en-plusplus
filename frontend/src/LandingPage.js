@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
 import {Grid} from 'semantic-ui-react';
+
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
 
@@ -51,13 +52,17 @@ class LandingPage extends React.Component {
         <Grid>
           <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
-              Sidebar
+              <Sidebar
+                renderPair={this.state.renderPair}
+                kitchens={this.state.kitchens}
+                recipes={this.state.recipes}
+              />
             </Grid.Column>
             <Grid.Column width={11}>
               < MainContainer
-                  renderPair={this.state.renderPair}
-                  kitchens={this.state.kitchens}
-                  recipes={this.state.recipes}
+                renderPair={this.state.renderPair}
+                kitchens={this.state.kitchens}
+                recipes={this.state.recipes}
               />
             </Grid.Column>
           </Grid.Row>
