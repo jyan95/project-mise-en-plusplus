@@ -3,6 +3,7 @@ import Navbar from './containers/Navbar';
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
 
+
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
 
@@ -45,15 +46,14 @@ class LandingPage extends React.Component {
 
   render() {
     // add to return when ready:
-    // <Navbar user = {this.state.currentUser}/>
+    //
     // <Sidebar kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair}/>
     // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
-      <div>
+      <Navbar user = {this.state.currentUser}/>
 
 
-      </div>
-    )
+    );
   }
 }
 
