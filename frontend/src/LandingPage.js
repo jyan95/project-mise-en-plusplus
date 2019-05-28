@@ -1,5 +1,5 @@
 import React from 'react';
-// import Navbar from './Navbar';
+import Navbar from './containers/Navbar';
 // import MainContainer from './containers/MainContainer';
 // import Sidebar from './containers/Sidebar';
 
@@ -13,11 +13,11 @@ class LandingPage extends React.Component {
     renderPair: 'kitchenIndex',
     // if kitchenIndex = kitchens index in sidebar and welcome message in MainContainer
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
-    kitchens: [];
-    recipes: [];
+    kitchens: [],
+    recipes: []
   }
 
-  function shuffleArray(arr){
+  shuffleArray(arr){
     for(let i = arr.length - 1; i > 0; i--){
       const j = Math.floor(Math.random() * (i+1));
       [arr[i], arr[j]] = [arr[j], arr[i]];
@@ -37,7 +37,7 @@ class LandingPage extends React.Component {
     .then(r => r.json())
     .then(console.log)
     .then(data => {
-      let recipes = shuffleArray(data).slice(0,19);
+      let recipes = this.shuffleArray(data).slice(0,19);
       this.setState({recipes: recipes})
     });
   } // end of fetches
@@ -45,14 +45,15 @@ class LandingPage extends React.Component {
 
   render() {
     // add to return when ready:
-    // <Navbar user = {this.state.currentUser}/>
+    //
     // <Sidebar kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair}/>
     // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
-      <div>
+      <Navbar user = {this.state.currentUser}/>
 
 
-      </div>
-    )
+    );
   }
 }
+
+export default LandingPage;
