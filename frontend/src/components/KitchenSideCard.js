@@ -5,7 +5,8 @@ const KitchenSideCard = props => {
   const { id, name, recipes } = props.kitchen;
   return (
     <Card
-      onClick={() => props.showDetails(id)}
+      className="centered"
+      onClick={() => props.showKitchenDetails(id)}
       header={name}
     />
   )

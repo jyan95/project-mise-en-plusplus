@@ -2,7 +2,7 @@ import React from 'react';
 
 const KitchenMainCard = props => {
   return (
-    <div className="ui card centered">
+    <div className="ui card centeredgit ">
       {props.recipe.name}
     </div>
   )
