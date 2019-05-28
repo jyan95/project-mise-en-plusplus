@@ -1,14 +1,20 @@
 import React from 'react';
 import './App.css';
-import LandingPage from './LandingPage'
+import LandingPage from './LandingPage';
+import CookingPage from './CookingPage';
 
+class App extends React.Component {
+  state = {
+    page: 'LandingPage'
+  }
 
-function App() {
-  return (
+  render() {
+    return (
     <div>
-      <LandingPage/>
+      <CookingPage kitchen={this.state.kitchen}/>
     </div>
-  );
+    );
+  }
 }
 
 export default App;

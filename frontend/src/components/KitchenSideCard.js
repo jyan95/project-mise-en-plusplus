@@ -8,7 +8,7 @@ const KitchenSideCard = props => {
       className="centered"
       onClick={() => props.showKitchenDetails(id)}
       header={name}
-      meta={recipes.length}
+      meta={`Recipes: ${recipes.length}`}
     />
   )
 }
