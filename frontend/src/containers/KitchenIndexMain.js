@@ -3,6 +3,13 @@ import KitchenMainCard from "../components/KitchenMainCard";
 
 class KitchenIndexMain extends React.Component {
 
+  render(){
+    return (
+      <div>
+        Kitchen INdex Main
+      </div>
+    )
+  }
 }
 
 export default KitchenIndexMain;
