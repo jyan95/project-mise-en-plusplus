@@ -3,7 +3,7 @@ import Navbar from './containers/Navbar';
 import {Grid} from 'semantic-ui-react';
 
 import MainContainer from './containers/MainContainer';
-// import Sidebar from './containers/Sidebar';
+import Sidebar from './containers/Sidebar';
 
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
@@ -29,14 +29,14 @@ class LandingPage extends React.Component {
   componentDidMount(){
     fetch(KITCHENS)
     .then(r => r.json())
-    .then(console.log)
+    // .then(console.log)
     .then(data => {
       this.setState({kitchens: data})
     })
 
     fetch(RECIPES)
     .then(r => r.json())
-    .then(console.log)
+    // .then(console.log)
     .then(data => {
       this.setState({recipes: data})
     })
@@ -54,13 +54,17 @@ class LandingPage extends React.Component {
         <Grid>
           <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
-              Sidebar
+              <Sidebar
+                renderPair={this.state.renderPair}
+                kitchens={this.state.kitchens}
+                recipes={this.state.recipes}
+              />
             </Grid.Column>
             <Grid.Column width={11}>
               < MainContainer
-                  renderPair={this.state.renderPair}
-                  kitchens={this.state.kitchens}
-                  recipes={this.state.recipes}
+                renderPair={this.state.renderPair}
+                kitchens={this.state.kitchens}
+                recipes={this.state.recipes}
               />
             </Grid.Column>
           </Grid.Row>
