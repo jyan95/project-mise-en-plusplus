@@ -5,8 +5,8 @@ import {Grid} from 'semantic-ui-react';
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
 
-const KITCHENS = 'http://localhost:3000/kitchens';
-const RECIPES = 'http://localhost:3000/recipes';
+const KITCHENS_URL = 'http://localhost:3000/kitchens';
+const RECIPES_URL = 'http://localhost:3000/recipes';
 
 class LandingPage extends React.Component {
   state = {
@@ -27,13 +27,13 @@ class LandingPage extends React.Component {
   }
 
   componentDidMount(){
-    fetch(KITCHENS)
+    fetch(KITCHENS_URL)
     .then(r => r.json())
     .then(data => {
       this.setState({kitchens: data})
     })
 
-    fetch(RECIPES)
+    fetch(RECIPES_URL)
     .then(r => r.json())
     .then(data => {
       this.setState({recipes: data}, ()=> console.log(this.state.recipes))
