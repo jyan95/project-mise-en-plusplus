@@ -1,7 +1,8 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
-// import MainContainer from './containers/MainContainer';
-// import Sidebar from './containers/Sidebar';
+import MainContainer from './containers/MainContainer';
+import Sidebar from './containers/Sidebar';
+
 
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
@@ -20,8 +21,8 @@ class LandingPage extends React.Component {
   shuffleArray(arr){
     for(let i = arr.length - 1; i > 0; i--){
       const j = Math.floor(Math.random() * (i+1));
-      [arr[i], arr[j]] = [arr[j], arr[i]];
-    };
+      [arr[i], arr[j]] = [arr[j], arr[i]]
+    }
   }
 
   componentDidMount(){
