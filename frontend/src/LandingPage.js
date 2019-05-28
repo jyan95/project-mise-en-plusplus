@@ -29,16 +29,14 @@ class LandingPage extends React.Component {
   componentDidMount(){
     fetch(KITCHENS)
     .then(r => r.json())
-    // .then(console.log)
     .then(data => {
       this.setState({kitchens: data})
     })
 
     fetch(RECIPES)
     .then(r => r.json())
-    // .then(console.log)
     .then(data => {
-      this.setState({recipes: data})
+      this.setState({recipes: data}, ()=> console.log(this.state.recipes))
     })
   } // end of fetches
 
