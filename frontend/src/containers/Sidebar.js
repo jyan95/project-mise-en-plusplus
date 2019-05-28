@@ -11,20 +11,23 @@ class Sidebar extends React.Component {
 
   renderSidebar = () => {
     let kitchens = this.props.kitchens;
-    switch (this.state.renderPair) {
+    switch (this.props.renderPair) {
       case 'kitchenIndex':
-        return kitchens.map(k => <KitchenSideCard kitchen={k}/>);
-      case 'kitchenShow':
-        return <KitchenDetailSideCard />;
+        return <KitchenIndexSide kitchens={kitchens}/>
+      // case 'kitchenShow':
+      //   return <KitchenDetailSideCard />;
       default:
-        return kitchens.map(k => <KitchenSideCard kitchen={k}/>);
+        return <KitchenIndexSide kitchens={kitchens}/>
     }
   }
 
   render(){
     return(
       <div className='ui items'>
-        {this.renderSidebar}
+        <header>
+          Your Kitchens:
+        </header>
+        {this.renderSidebar()}
       </div>
     )
   }
