@@ -3,13 +3,14 @@ import KitchenMainCard from "../components/KitchenMainCard";
 
 class KitchenIndexMain extends React.Component {
 
+
   render(){
+    const { id, name, recipes } = this.props.currentKitchenShow
+    console.log(this.props)
     return (
       <div>
-        <h1> Recipes </h1>
-        {this.props.recipes.map(recipe => {
-          return <KitchenMainCard recipe={recipe} key={recipe.id}/>
-        })}
+        <h1> Kitchen Details </h1>
+        { name }
       </div>
     )
   }
