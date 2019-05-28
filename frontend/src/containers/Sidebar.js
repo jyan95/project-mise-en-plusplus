@@ -3,7 +3,7 @@ import KitchenShowSide from './KitchenShowSide';
 import KitchenIndexSide from './KitchenIndexSide';
 
 
-class Sidebar extends React.Components {
+class Sidebar extends React.Component {
 
 }
 

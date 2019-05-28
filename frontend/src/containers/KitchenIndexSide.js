@@ -1,7 +1,7 @@
 import React from "react";
 import KitchenSideCard from "../components/KitchenSideCard";
 
-class KitchenIndexSide extends React.Components {
+class KitchenIndexSide extends React.Component {
 
 }
 
