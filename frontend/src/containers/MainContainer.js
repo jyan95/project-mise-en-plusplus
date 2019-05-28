@@ -11,9 +11,13 @@ class MainContainer extends React.Component {
           kitchens={this.props.kitchens}
           recipes={this.props.recipes}
           currentKitchenShow={this.props.currentKitchenShow}
+          changeRenderPair={this.props.changeRenderPair}
         />
       case "kitchenShow":
-        return < KitchenShowMain />
+        return < KitchenShowMain
+          currentKitchenShow={this.props.currentKitchenShow}
+          recipes={this.props.recipes}
+        />
     }
   }
 
