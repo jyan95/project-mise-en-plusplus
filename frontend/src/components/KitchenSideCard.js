@@ -2,7 +2,7 @@ import React from 'react';
 import { Card } from 'semantic-ui-react';
 
 const KitchenSideCard = props => {
-  const { id, name, recipes } = props.kitchen;
+  const { id, name, dishes } = props.kitchen;
   return (
     <Card
       className="centered"

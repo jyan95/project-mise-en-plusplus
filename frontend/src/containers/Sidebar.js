@@ -9,6 +9,11 @@ class Sidebar extends React.Component {
     return this.props.kitchens.find(k => k.id === id);
   }
 
+  showDetails(id){
+    let k = this.findKitchen(id)
+    return <KitchenShowSide kitchen={k}/>
+  }
+
   renderSidebar = () => {
     let kitchens = this.props.kitchens;
     switch (this.props.renderPair) {
@@ -17,7 +22,7 @@ class Sidebar extends React.Component {
       // case 'kitchenShow':
       //   return <KitchenDetailSideCard />;
       default:
-        return <KitchenIndexSide kitchens={kitchens}/>
+        return <KitchenIndexSide kitchens={kitchens} showDetails={this.showDetails}/>
     }
   }
 
