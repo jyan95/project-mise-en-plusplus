@@ -59,7 +59,11 @@ class LandingPage extends React.Component {
               Sidebar
             </Grid.Column>
             <Grid.Column width={11}>
-              MainContainer
+              < MainContainer
+                  renderPair={this.state.renderPair}
+                  kitchens={this.state.kitchens}
+                  recipes={this.state.recipes}
+              />
             </Grid.Column>
           </Grid.Row>
         </Grid>
