@@ -1,13 +1,9 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
-<<<<<<< HEAD
 import {Grid} from 'semantic-ui-react';
+
 // import MainContainer from './containers/MainContainer';
 // import Sidebar from './containers/Sidebar';
-=======
-import MainContainer from './containers/MainContainer';
-import Sidebar from './containers/Sidebar';
->>>>>>> 0820dcbacef9b8b02c118b227a8fc5adfcd8c92b
 
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
