@@ -1,7 +1,13 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
+<<<<<<< HEAD
+import {Grid} from 'semantic-ui-react';
+// import MainContainer from './containers/MainContainer';
+// import Sidebar from './containers/Sidebar';
+=======
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
+>>>>>>> 0820dcbacef9b8b02c118b227a8fc5adfcd8c92b
 
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
@@ -45,15 +51,24 @@ class LandingPage extends React.Component {
 
   render() {
     // add to return when ready:
-    // <Navbar user = {this.state.currentUser}/>
+    //
     // <Sidebar kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair}/>
     // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
-      <div>
-
-
-      </div>
-    )
+      <React.Fragment>
+        <Navbar user = {this.state.currentUser}/>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={5}>
+              Sidebar
+            </Grid.Column>
+            <Grid.Column width={11}>
+              MainContainer
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </React.Fragment>
+    );
   }
 }
 
