@@ -30,17 +30,15 @@ class LandingPage extends React.Component {
     .then(r => r.json())
     .then(console.log)
     .then(data => {
-      let kitchens = data.filter(k => k.user === this.state.currentUser);
-      this.setState({kitchens: kitchens.slice(0,9)});
-    });
+      this.setState({kitchens: data})
+    })
 
     fetch(RECIPES)
     .then(r => r.json())
     .then(console.log)
     .then(data => {
-      let recipes = this.shuffleArray(data).slice(0,19);
-      this.setState({recipes: recipes})
-    });
+      this.setState({recipes: data})
+    })
   } // end of fetches
 
 
@@ -53,7 +51,7 @@ class LandingPage extends React.Component {
       <React.Fragment>
         <Navbar user = {this.state.currentUser}/>
         <Grid>
-          <Grid.Row>
+          <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
               Sidebar
             </Grid.Column>
