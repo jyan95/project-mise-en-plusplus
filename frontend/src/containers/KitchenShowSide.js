@@ -1,5 +1,5 @@
 import React from "react";
-import KitchenDetailSideCard from "./components/KitchenDetailSideCard"
+import KitchenDetailSideCard from "../components/KitchenDetailSideCard"
 
 class KitchenShowSide extends React.Components {
 

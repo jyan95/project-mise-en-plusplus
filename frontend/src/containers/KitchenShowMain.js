@@ -1,5 +1,5 @@
 import React from "react";
-import RecipeMainCard from "./components/RecipeMainCard";
+import RecipeMainCard from "../components/RecipeMainCard";
 
 
 class KitchenShowMain extends React.Components {

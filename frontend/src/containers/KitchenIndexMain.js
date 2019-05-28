@@ -1,5 +1,5 @@
 import React from "react";
-import KitchenMainCard from "./components/KitchenMainCard";
+import KitchenMainCard from "../components/KitchenMainCard";
 
 class KitchenIndexMain extends React.Components {
 
