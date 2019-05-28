@@ -7,14 +7,14 @@ class MainContainer extends React.Component {
   renderContainer = () =>{
     switch(this.props.renderPair){
       case "kitchenIndex":
-        return < KitchenIndexMain />
+        return < KitchenIndexMain kitchens={this.props.kitchens}
+        recipes={this.props.recipes}/>
       case "kitchenShow":
         return < KitchenShowMain />
     }
   }
 
   render(){
-    console.log(this.props)
     return(
       <div className="ui container">
         {this.renderContainer()}

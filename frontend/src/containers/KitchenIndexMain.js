@@ -6,7 +6,10 @@ class KitchenIndexMain extends React.Component {
   render(){
     return (
       <div>
-        Kitchen INdex Main
+        <h1> Recipes </h1>
+        {this.props.recipes.map(recipe => {
+          return <KitchenMainCard recipe={recipe} key={recipe.id}/>
+        })}
       </div>
     )
   }
