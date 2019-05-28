@@ -16,7 +16,14 @@ class LandingPage extends React.Component {
     // if kitchenIndex = kitchens index in sidebar and welcome message in MainContainer
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
     kitchens: [],
-    recipes: []
+    recipes: [],
+    currentKitchenShow: {}
+  }
+
+  showKitchenDetails = id => {
+    this.setState({
+      currentKitchenShow: this.state.kitchens.find(kitchen => kitchen.id === id)
+    })
   }
 
   shuffleArray(arr){
@@ -56,6 +63,7 @@ class LandingPage extends React.Component {
                 renderPair={this.state.renderPair}
                 kitchens={this.state.kitchens}
                 recipes={this.state.recipes}
+                showKitchenDetails={this.showKitchenDetails}
               />
             </Grid.Column>
             <Grid.Column width={11}>
@@ -63,6 +71,7 @@ class LandingPage extends React.Component {
                 renderPair={this.state.renderPair}
                 kitchens={this.state.kitchens}
                 recipes={this.state.recipes}
+                currentKitchenShow={this.state.currentKitchenShow}
               />
             </Grid.Column>
           </Grid.Row>
