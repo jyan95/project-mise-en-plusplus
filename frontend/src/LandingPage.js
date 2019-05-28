@@ -1,7 +1,7 @@
 import React from 'react';
 // import Navbar from './Navbar';
-// import MainContainer from './MainContainer';
-// import Sidebar from './Sidebar';
+// import MainContainer from './containers/MainContainer';
+// import Sidebar from './containers/Sidebar';
 
 const KITCHENS = 'http://localhost:3000/kitchens';
 const RECIPES = 'http://localhost:3000/recipes';
