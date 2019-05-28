@@ -1,5 +1,6 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
+import {Grid} from 'semantic-ui-react';
 // import MainContainer from './containers/MainContainer';
 // import Sidebar from './containers/Sidebar';
 
@@ -49,9 +50,19 @@ class LandingPage extends React.Component {
     // <Sidebar kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair}/>
     // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
-      <Navbar user = {this.state.currentUser}/>
-
-
+      <React.Fragment>
+        <Navbar user = {this.state.currentUser}/>
+        <Grid>
+          <Grid.Row>
+            <Grid.Column width={5}>
+              Sidebar
+            </Grid.Column>
+            <Grid.Column width={11}>
+              MainContainer
+            </Grid.Column>
+          </Grid.Row>
+        </Grid>
+      </React.Fragment>
     );
   }
 }
