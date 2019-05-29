@@ -29,7 +29,7 @@ class LandingPage extends React.Component {
       return recipe.id === id
     })
 
-    api.addRecipe({recipe_id: id, kitchen_id: this.state.currentKitchenShow.id})
+    api.addDish({recipe_id: id, kitchen_id: this.state.currentKitchenShow.id})
     .then(() => {
       api.getKitchens()
       .then(kitchens => {
@@ -42,10 +42,20 @@ class LandingPage extends React.Component {
   }
 
   handleDeleteClick = (id) => {
-    console.log(id)
-    console.log(
-      'hi'
-    )
+    alert('Recipe removed from Kitchen!')
+    const dish = this.state.currentKitchenShow.dishes.find(dish=>{
+      return dish.recipe_id == id && dish.kitchen_id == this.state.currentKitchenShow.id
+    })
+    api.deleteDish(dish.id)
+    .then(() => {
+      api.getKitchens()
+      .then(kitchens => {
+        this.setState({
+          kitchens,
+          currentKitchenShow: kitchens.find(k => k.id === this.state.currentKitchenShow.id)
+        })
+      })
+    })
   }
 
   changeRenderPairToIndex= () => {

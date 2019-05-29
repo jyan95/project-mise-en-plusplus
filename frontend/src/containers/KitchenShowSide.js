@@ -9,8 +9,11 @@ class KitchenShowSide extends React.Component {
     return(
       <div className="centered">
         <h1> { name }-Kitchen </h1>
-        {recipes.map(ingredient => {
-          return <KitchenDetailSideCard ingredient={ingredient} handleDeleteClick={this.props.handleDeleteClick}/>
+        {recipes.map(recipe => {
+          return <KitchenDetailSideCard
+            recipe={recipe}
+            handleDeleteClick={this.props.handleDeleteClick}
+          />
         })}
       </div>
     )

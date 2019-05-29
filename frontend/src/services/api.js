@@ -14,7 +14,7 @@ const getRecipes = () => {
   return get(`${API_BASE}/recipes`)
 }
 
-const addRecipe = (data) => {
+const addDish = (data) => {
   return fetch(`${API_BASE}/dishes`,{
     method: 'POST',
     headers: {
@@ -28,8 +28,16 @@ const addRecipe = (data) => {
   })
 }
 
+const deleteDish = (id) => {
+  return fetch(`${API_BASE}/dishes/${id}`, {
+    method: 'delete'
+  })
+  alert('hello')
+}
+
 const api = {
-  addRecipe,
+  addDish,
+  deleteDish,
   getKitchens,
   getRecipes
 }

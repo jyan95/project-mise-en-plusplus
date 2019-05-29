@@ -14,7 +14,7 @@ class KitchenDetailSideCard extends React.Component {
   }
 
   render(){
-    const { id, name, ingredients } = this.props.ingredient;
+    const { id, name, ingredients } = this.props.recipe;
     return (
 
       <div className="ui card centered ">
@@ -24,7 +24,7 @@ class KitchenDetailSideCard extends React.Component {
             ?<Icon name="chevron down" onClick={this.handleShowClick}/>
             :<Icon name="chevron left" onClick={this.handleShowClick}/>
           }
-          <Icon name="remove circle" onClick={()=>this.props.handleDeleteClick(this.props)}/>
+          <Icon name="remove circle" onClick={()=>this.props.handleDeleteClick(this.props.recipe.id)}/>
         </h2>
         {this.state.show &&
           ingredients.map(ingredient => {
