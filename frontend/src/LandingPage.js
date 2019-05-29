@@ -38,12 +38,7 @@ class LandingPage extends React.Component {
       renderPair: 'kitchenShow'
     })
   }
-
-
-
-
-
-
+  
   componentDidMount(){
     fetch(KITCHENS_URL)
     .then(r => r.json())
@@ -62,7 +57,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        
+
         <Navbar user = {this.state.currentUser}/>
         <Grid>
           <Grid.Row className="ui center aligned container">

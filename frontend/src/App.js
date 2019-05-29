@@ -1,17 +1,18 @@
 import React from 'react';
 import './App.css';
 import LandingPage from './LandingPage';
-import CookingPage from './CookingPage';
+import Login from './Login'
 
 class App extends React.Component {
   state = {
-    page: 'LandingPage'
+    signedIn: false,
+    currentUser: ''
   }
 
   render() {
     return (
     <div>
-      <CookingPage kitchen={this.state.kitchen}/>
+      {this.state.signedIn ? <LandingPage user={this.state.currentUser}/> : <Login/>}
     </div>
     );
   }
