@@ -60,10 +60,6 @@ class LandingPage extends React.Component {
 
 
   render() {
-    // add to return when ready:
-    //
-    // <Sidebar kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair}/>
-    // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
       <React.Fragment>
         
