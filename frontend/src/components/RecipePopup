@@ -1,0 +1,9 @@
+import React from 'react';
+
+const RecipePopup = props => {
+  return(
+    <li>{props.ingredient.name}</li>
+  )
+}
+
+export default RecipePopup;
