@@ -3,4 +3,6 @@ class KitchenSerializer < ActiveModel::Serializer
   # has_many :dishes
   has_many :recipes, through: :dishes
   attributes :id, :name
+
+
 end
