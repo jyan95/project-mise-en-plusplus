@@ -3,10 +3,15 @@ import KitchenDetailSideCard from "../components/KitchenDetailSideCard"
 
 class KitchenShowSide extends React.Component {
   render(){
-    const { id, name, recipes } = this.props.kitchen;
+    const { id, name, recipes } = this.props.currentKitchenShow;
     return(
-      <div>
+      <div className="centered">
+        <h1> Kitchen </h1>
+        <h2> { name }</h2>
 
+        {recipes.map(ingredient => {
+          return <KitchenDetailSideCard ingredient={ingredient}/>
+        })}
       </div>
     )
   }

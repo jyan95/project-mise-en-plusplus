@@ -27,3 +27,16 @@ end
 10.times do
   Kitchen.create(name: Faker::Address.unique.country, user_id: rand(1..2))
 end
+
+3.times do
+  Dish.create(kitchen_id: 1, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 2, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 3, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 4, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 5, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 6, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 7, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 8, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 9, recipe_id: rand(1..50))
+  Dish.create(kitchen_id: 10, recipe_id: rand(1..50))
+end

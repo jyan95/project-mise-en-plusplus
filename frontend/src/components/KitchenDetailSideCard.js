@@ -1,7 +1,37 @@
 import React from 'react';
+import { Icon } from 'semantic-ui-react'
 
-const KitchenDetailSideCard = props => {
+class KitchenDetailSideCard extends React.Component {
 
+  state = {
+    show: false
+  }
+
+  handleShowClick = () => {
+    this.setState({
+      show: !this.state.show
+    })
+  }
+
+  render(){
+    const { id, name, ingredients } = this.props.ingredient;
+    return (
+
+      <div className="ui card centered ">
+        <h2>
+          { name }
+          {this.state.show
+            ?<Icon name="chevron down" onClick={this.handleShowClick}/>
+            :<Icon name="chevron left" onClick={this.handleShowClick}/>
+          }
+        </h2>
+        {this.state.show &&
+          ingredients.map(ingredient => {
+          return <li>{ingredient.ingredient}</li>
+        })}
+      </div>
+    )
+  }
 }
 
 export default KitchenDetailSideCard;

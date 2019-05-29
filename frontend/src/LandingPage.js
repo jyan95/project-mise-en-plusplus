@@ -17,13 +17,13 @@ class LandingPage extends React.Component {
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
     kitchens: [],
     recipes: [],
-    currentKitchenShow: {}
+    currentKitchenShow: false
   }
 
   showKitchenDetails = id => {
     this.setState({
       currentKitchenShow: this.state.kitchens.find(kitchen => kitchen.id === id)
-    })
+    },()=>console.log(this.state.currentKitchenShow))
   }
 
   shuffleArray(arr){
@@ -32,6 +32,17 @@ class LandingPage extends React.Component {
       [arr[i], arr[j]] = [arr[j], arr[i]]
     }
   }
+
+  changeRenderPair = () =>{
+    this.setState({
+      renderPair: 'kitchenShow'
+    })
+  }
+
+
+
+
+
 
   componentDidMount(){
     fetch(KITCHENS_URL)
@@ -51,6 +62,7 @@ class LandingPage extends React.Component {
   render() {
     return (
       <React.Fragment>
+        
         <Navbar user = {this.state.currentUser}/>
         <Grid>
           <Grid.Row className="ui center aligned container">
@@ -60,6 +72,7 @@ class LandingPage extends React.Component {
                 kitchens={this.state.kitchens}
                 recipes={this.state.recipes}
                 showKitchenDetails={this.showKitchenDetails}
+                currentKitchenShow={this.state.currentKitchenShow}
               />
             </Grid.Column>
             <Grid.Column width={11}>
@@ -68,6 +81,7 @@ class LandingPage extends React.Component {
                 kitchens={this.state.kitchens}
                 recipes={this.state.recipes}
                 currentKitchenShow={this.state.currentKitchenShow}
+                changeRenderPair={this.changeRenderPair}
               />
             </Grid.Column>
           </Grid.Row>
