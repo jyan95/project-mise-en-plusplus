@@ -24,6 +24,7 @@ class KitchenDetailSideCard extends React.Component {
             ?<Icon name="chevron down" onClick={this.handleShowClick}/>
             :<Icon name="chevron left" onClick={this.handleShowClick}/>
           }
+          <Icon name="remove circle" onClick={()=>this.props.handleDeleteClick(this.props)}/>
         </h2>
         {this.state.show &&
           ingredients.map(ingredient => {
