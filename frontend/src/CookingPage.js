@@ -70,6 +70,70 @@ let kitchen = {
           updated_at: "2019-05-29T13:34:42.501Z"
         }
       ]
+    },
+    {
+      id: 2,
+      name: "Pineapple Trout Rice",
+      ingredients: [
+        {
+          id: 95,
+          ingredient: "Rice",
+          quantity: "1/4 teaspoon"
+        },
+        {
+          id: 102,
+          ingredient: "Rosemary",
+          quantity: "3 gallon"
+        },
+        {
+          id: 1073,
+          ingredient: "Trout",
+          quantity: "1/3 teaspoon"
+        },
+        {
+          id: 1234,
+          ingredient: "Pineapple",
+          quantity: "2 gallon"
+        }
+      ],
+      instructions: [
+        {
+          id: 124,
+          recipe_id: 1,
+          stage: 1,
+          action: "boil",
+          duration: 113,
+          created_at: "2019-05-29T13:34:42.145Z",
+          updated_at: "2019-05-29T13:34:42.145Z"
+        },
+        {
+          id: 457,
+          recipe_id: 1,
+          stage: 1,
+          action: "slice",
+          duration: 285,
+          created_at: "2019-05-29T13:34:42.342Z",
+          updated_at: "2019-05-29T13:34:42.342Z"
+        },
+        {
+          id: 908,
+          recipe_id: 1,
+          stage: 1,
+          action: "salt",
+          duration: 155,
+          created_at: "2019-05-29T13:34:42.405Z",
+          updated_at: "2019-05-29T13:34:42.405Z"
+        },
+        {
+          id: 1233,
+          recipe_id: 1,
+          stage: 1,
+          action: "cut",
+          duration: 84,
+          created_at: "2019-05-29T13:34:42.501Z",
+          updated_at: "2019-05-29T13:34:42.501Z"
+        }
+      ]
     }
   ]
 };
@@ -77,11 +141,11 @@ let kitchen = {
 class CookingPage extends React.Component{
   constructor(props){
     super(props);
-    let { id, name, recipes } = kitchen; //this.props.kitchen
+    let { recipes } = kitchen; //this.props.kitchen
     this.state = {
       todos: recipes.filter(r => (r.instructions.some(i => (i.stage === 1)))),
-      inProgress:[],
-      finished:[]
+      inProgress:recipes.filter(r => (r.instructions.some(i => (i.stage === 2)))),
+      finished:recipes.filter(r => (r.instructions.some(i => (i.stage === 3))))
     }
   }
 
@@ -106,19 +170,19 @@ class CookingPage extends React.Component{
               </Grid.Column>
               <Grid.Column width={4}>
                 To Do
-                {this.state.todos.map(r => <RecipeCooking recipe={r} update={this.update} stage={1}/>)}
+                {this.state.todos.map(r => <RecipeCooking recipe={r} update={this.update} stage={1} key={r.id}/>)}
               </Grid.Column>
               <Grid.Column width={1}>
               </Grid.Column>
               <Grid.Column width={4}>
                 In Progress
-                {this.state.inProgress.map(r => <RecipeCooking recipe={r} update={this.update} stage={2}/>)}
+                {this.state.inProgress.map(r => <RecipeCooking recipe={r} update={this.update} stage={2} key={r.id}/>)}
               </Grid.Column>
               <Grid.Column width={1}>
               </Grid.Column>
               <Grid.Column width={4}>
                 Finished
-                {this.state.finished.map(r => <RecipeCooking recipe={r} update={this.update} stage={3}/>)}
+                {this.state.finished.map(r => <RecipeCooking recipe={r} update={this.update} stage={3} key={r.id}/>)}
               </Grid.Column>
               <Grid.Column width={1}>
               </Grid.Column>
