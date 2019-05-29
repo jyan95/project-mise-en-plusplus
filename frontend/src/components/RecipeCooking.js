@@ -10,11 +10,11 @@ class RecipeCooking extends React.Component{
   }
   nextStage(id){
     this.setState({
-      instructions: this.state.instructions.map(i => i.id === id ? {...i,stage: i.stage===3 ? i.stage=1 : i.stage+=1} : i)
+      instructions: this.state.instructions.map(i => i.id === id ? {...i,stage: i.stage===3 ? i.stage=3 : i.stage+=1} : i)
     })
   }
   render(){
-    const { id, name, ingredients } = this.props.recipe;
+    const { name, ingredients } = this.props.recipe;
     let instructions = this.state.instructions.filter(i => i.stage === this.props.stage);
     return(
       <Container>
@@ -27,6 +27,7 @@ class RecipeCooking extends React.Component{
               this.props.update()
             }}
             header={i.action + ` the ` + ingredients[index].ingredient}
+            key={i.id}
           />
         ))}
       </Container>
