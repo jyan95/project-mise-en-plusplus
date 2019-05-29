@@ -66,6 +66,7 @@ class LandingPage extends React.Component {
     // <MainContainer kitchens = {this.state.kitchens} recipes = {this.state.recipes} renderPair = {this.state.renderPair/>
     return (
       <React.Fragment>
+        
         <Navbar user = {this.state.currentUser}/>
         <Grid>
           <Grid.Row className="ui center aligned container">

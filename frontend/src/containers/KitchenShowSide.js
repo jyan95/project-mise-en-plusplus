@@ -6,7 +6,9 @@ class KitchenShowSide extends React.Component {
     const { id, name, recipes } = this.props.currentKitchenShow;
     return(
       <div className="centered">
-        <h1> { name } </h1>
+        <h1> Kitchen </h1>
+        <h2> { name }</h2>
+
         {recipes.map(ingredient => {
           return <KitchenDetailSideCard ingredient={ingredient}/>
         })}

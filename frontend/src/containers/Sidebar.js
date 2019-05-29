@@ -1,6 +1,7 @@
 import React from "react";
 import KitchenShowSide from './KitchenShowSide';
 import KitchenIndexSide from './KitchenIndexSide';
+import './Sidebar.css';
 
 
 class Sidebar extends React.Component {
