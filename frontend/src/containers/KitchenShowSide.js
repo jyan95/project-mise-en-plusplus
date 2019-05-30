@@ -11,15 +11,17 @@ class KitchenShowSide extends React.Component {
       <div className="centered">
         <h1> { name }-Kitchen </h1>
         <h2> <Button onClick={this.props.handleCookClick}>Start Cooking!</Button> </h2>
-
-        {recipes.map(recipe => {
-          return <KitchenDetailSideCard
-            key={recipe.id}
-            recipe={recipe}
-            handleDeleteClick={this.props.handleDeleteClick}
-          />
-        })}
-
+        <div className='content'>
+          <div className='left aligned description'>
+            {recipes.map(recipe => {
+              return <KitchenDetailSideCard
+                key={recipe.id}
+                recipe={recipe}
+                handleDeleteClick={this.props.handleDeleteClick}
+              />
+            })}
+          </div>
+        </div>
       </div>
     )
   }
