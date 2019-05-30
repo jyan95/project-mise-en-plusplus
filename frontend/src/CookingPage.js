@@ -62,7 +62,7 @@ class CookingPage extends React.Component{
             </Grid.Row>
           </Grid>
         </Segment>
-        <h2 align="center" ><button onClick={this.props.handleDoneClick} class="ui secondary button">Finish Cooking</button></h2>
+        <h2 align="center" ><button onClick={this.props.handleDoneClick} className="ui secondary button">Finish Cooking</button></h2>
       </React.Fragment>
     )
   }
