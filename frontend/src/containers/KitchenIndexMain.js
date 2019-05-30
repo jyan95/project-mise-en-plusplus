@@ -17,13 +17,15 @@ class KitchenIndexMain extends React.Component {
     return (
       <div>
         <h1> Kitchen Details </h1>
+
         <h2>{ name }</h2>
         {this.props.currentKitchenShow && <Button onClick={this.handleKitchenClick}>Select Meal</Button>}
+        <div className='ui three stackable cards'>
         {this.props.currentKitchenShow &&
           recipes.map(recipe =>{
           return <KitchenMainCard recipe={recipe} className='ui fluid card'/>
         })}
-
+        </div>
       </div>
     )
   }
