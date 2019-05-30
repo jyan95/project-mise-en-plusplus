@@ -13,4 +13,10 @@ class DishesController < ApplicationController
     @dish = Dish.find_or_create_by(kitchen_id: params['kitchen_id'], recipe_id: params['recipe_id'])
     render json: @dish
   end
+
+  def destroy
+    @dish = Dish.find(params[:id])
+    @dish.destroy
+    render json: @dish
+  end
 end

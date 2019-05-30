@@ -10,10 +10,12 @@ class RecipeSerializer < ActiveModel::Serializer
     self.object.recipe_ingredients.map do |ri|
       {
         id: ri.id,
+        # dish_id: dishes.id,
         ingredient: ri.ingredient.name,
         quantity: ri.quantity
       }
     end
   end
+
 
 end

@@ -5,8 +5,6 @@ import {Grid} from 'semantic-ui-react';
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
 
-const KITCHENS_URL = 'http://localhost:3000/kitchens';
-const RECIPES_URL = 'http://localhost:3000/recipes';
 
 class LandingPage extends React.Component {
   state = {
@@ -15,22 +13,12 @@ class LandingPage extends React.Component {
     renderPair: 'kitchenIndex',
     // if kitchenIndex = kitchens index in sidebar and welcome message in MainContainer
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
-    kitchens: [],
-    recipes: [],
-    currentKitchenShow: false
   }
 
-  showKitchenDetails = id => {
+  changeRenderPairToIndex= () => {
     this.setState({
-      currentKitchenShow: this.state.kitchens.find(kitchen => kitchen.id === id)
-    },()=>console.log(this.state.currentKitchenShow))
-  }
-
-  shuffleArray(arr){
-    for(let i = arr.length - 1; i > 0; i--){
-      const j = Math.floor(Math.random() * (i+1));
-      [arr[i], arr[j]] = [arr[j], arr[i]]
-    }
+      renderPair: 'kitchenIndex'
+    })
   }
 
   changeRenderPair = () =>{
@@ -38,44 +26,38 @@ class LandingPage extends React.Component {
       renderPair: 'kitchenShow'
     })
   }
-  
-  componentDidMount(){
-    fetch(KITCHENS_URL)
-    .then(r => r.json())
-    .then(data => {
-      this.setState({kitchens: data})
-    })
-
-    fetch(RECIPES_URL)
-    .then(r => r.json())
-    .then(data => {
-      this.setState({recipes: data}, ()=> console.log(this.state.recipes))
-    })
-  } // end of fetches
 
 
   render() {
     return (
       <React.Fragment>
 
-        <Navbar user = {this.state.currentUser}/>
+
+        <Navbar
+          user = {this.state.currentUser}
+          changeRenderPairToIndex = {this.changeRenderPairToIndex}
+        />
+
         <Grid>
           <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
               <Sidebar
+                handleDeleteClick={this.props.handleDeleteClick}
                 renderPair={this.state.renderPair}
-                kitchens={this.state.kitchens}
-                recipes={this.state.recipes}
-                showKitchenDetails={this.showKitchenDetails}
-                currentKitchenShow={this.state.currentKitchenShow}
+                kitchens={this.props.kitchens}
+                recipes={this.props.recipes}
+                showKitchenDetails={this.props.showKitchenDetails}
+                currentKitchenShow={this.props.currentKitchenShow}
+                handleCookClick={this.props.handleCookClick}
               />
             </Grid.Column>
             <Grid.Column width={11}>
-              < MainContainer
+              <MainContainer
+                handleAddClick={this.props.handleAddClick}
                 renderPair={this.state.renderPair}
-                kitchens={this.state.kitchens}
-                recipes={this.state.recipes}
-                currentKitchenShow={this.state.currentKitchenShow}
+                kitchens={this.props.kitchens}
+                recipes={this.props.recipes}
+                currentKitchenShow={this.props.currentKitchenShow}
                 changeRenderPair={this.changeRenderPair}
               />
             </Grid.Column>

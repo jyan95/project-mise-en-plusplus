@@ -17,7 +17,10 @@ class MainContainer extends React.Component {
         return < KitchenShowMain
           currentKitchenShow={this.props.currentKitchenShow}
           recipes={this.props.recipes}
+          handleAddClick={this.props.handleAddClick}
         />
+      default:
+        return <div>Sorry Bro</div>
     }
   }
 

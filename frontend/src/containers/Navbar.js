@@ -6,6 +6,10 @@ class Navbar extends React.Component {
 
   handleItemClick = (e, { name }) => this.setState({ activeItem: name })
 
+  handleKitchenClick = () => {
+    this.props.changeRenderPairToIndex()
+  }
+
   render() {
     const { activeItem } = this.state;
     // const currentUser = this.props.user;
@@ -22,7 +26,7 @@ class Navbar extends React.Component {
 
           <Menu.Item
             name='kitchens'
-            active={activeItem === 'kitchens'} onClick={this.handleItemClick}>
+            active={activeItem === 'kitchens'} onClick={this.handleKitchenClick}>
             Kitchens
           </Menu.Item>
 

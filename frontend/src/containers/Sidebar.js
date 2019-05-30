@@ -25,7 +25,9 @@ class Sidebar extends React.Component {
         />
       case 'kitchenShow':
         return <KitchenShowSide
+          handleDeleteClick={this.props.handleDeleteClick}
           currentKitchenShow={this.props.currentKitchenShow}
+          handleCookClick={this.props.handleCookClick}
         />;
       default:
         return <KitchenIndexSide kitchens={kitchens} showDetails={this.showDetails}/>
