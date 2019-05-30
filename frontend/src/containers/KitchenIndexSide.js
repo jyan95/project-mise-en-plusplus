@@ -5,6 +5,14 @@ import { Button, Popup, Input, Form} from 'semantic-ui-react'
 
 class KitchenIndexSide extends React.Component {
 
+  state ={
+    newKitchen: ''
+  }
+
+  handleChange = (e) => {
+    this.setState({newKitchen: e.target.value}, ()=>console.log(this.state.newKitchen))
+  }
+
   render(){
     return (
       <div className="ui-items">
@@ -20,7 +28,11 @@ class KitchenIndexSide extends React.Component {
         })}
         <Popup
           trigger={<Button>Add Kitchen</Button>}
-          content={<Form><Input icon='add' placeholder='Add Kitchen...' onSubmit={this.props.handleNewKitchen}/></Form>}
+          content={
+            <form onSubmit={(event)=>this.props.handleNewKitchen(event, this.state.newKitchen)}>
+                <Input icon='add' placeholder='Add Kitchen...' onChange={this.handleChange}/>
+            </form>
+          }
           on='click'
           hideOnScroll
         />
