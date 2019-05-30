@@ -40,6 +40,7 @@ class LandingPage extends React.Component {
           <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
               <Sidebar
+                handleNewKitchen={this.props.handleNewKitchen}
                 handleDeleteClick={this.props.handleDeleteClick}
                 renderPair={this.state.renderPair}
                 kitchens={this.props.kitchens}

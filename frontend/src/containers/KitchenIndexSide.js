@@ -1,6 +1,7 @@
 import React from "react";
 import KitchenSideCard from "../components/KitchenSideCard";
 import './Sidebar.css'
+import { Button, Popup, Input, Form} from 'semantic-ui-react'
 
 class KitchenIndexSide extends React.Component {
 
@@ -17,6 +18,12 @@ class KitchenIndexSide extends React.Component {
             showKitchenDetails={this.props.showKitchenDetails}
           />
         })}
+        <Popup
+          trigger={<Button>Add Kitchen</Button>}
+          content={<Form><Input icon='add' placeholder='Add Kitchen...' onSubmit={this.props.handleNewKitchen}/></Form>}
+          on='click'
+          hideOnScroll
+        />
       </div>
     )
   }
