@@ -14,6 +14,7 @@ const getRecipes = () => {
   return get(`${API_BASE}/recipes`)
 }
 
+
 const addDish = (data) => {
   return fetch(`${API_BASE}/dishes`,{
     method: 'POST',
@@ -45,7 +46,7 @@ const addKitchen = (data) => {
       name: data.name,
       user_id: data.user_id
     })
-  })
+  }).then(resp => resp.json())
 }
 
 const api = {
