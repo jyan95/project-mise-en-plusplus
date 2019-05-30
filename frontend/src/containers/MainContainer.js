@@ -19,6 +19,8 @@ class MainContainer extends React.Component {
           recipes={this.props.recipes}
           handleAddClick={this.props.handleAddClick}
         />
+      default:
+        return <div>Sorry Bro</div>
     }
   }
 

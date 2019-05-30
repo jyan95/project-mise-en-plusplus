@@ -32,7 +32,7 @@ const deleteDish = (id) => {
   return fetch(`${API_BASE}/dishes/${id}`, {
     method: 'delete'
   })
-  alert('hello')
+
 }
 
 const api = {
