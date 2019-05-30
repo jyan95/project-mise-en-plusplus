@@ -22,7 +22,7 @@ class KitchenIndexMain extends React.Component {
         {this.props.currentKitchenShow && <Button onClick={this.handleKitchenClick}>Select Meal</Button>}
         {this.props.currentKitchenShow &&
           recipes.map(recipe =>{
-          return <KitchenMainCard recipe={recipe} key={recipe.id}/>
+          return <KitchenMainCard recipe={recipe}/>
         })}
       </div>
     )

@@ -5,7 +5,7 @@ const KitchenMainCard = props => {
     <div className="ui card centered ">
       <h2>{props.recipe.name}</h2>
       {props.recipe.ingredients.map(ingredient => {
-        return <li key ={ingredient.id}>{ingredient.ingredient}</li>
+        return <li>{ingredient.ingredient}</li>
       })}
     </div>
   )
