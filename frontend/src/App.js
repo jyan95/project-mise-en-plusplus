@@ -22,9 +22,14 @@ class App extends React.Component {
               return ({...instruction, progress: 1})
             })})
           })
-
       }
-    }, ()=> console.log(this.state.currentKitchenShow))
+    })
+  }
+  
+  handleDoneClick = () => {
+    this.setState({
+      page: 'LandingPage'
+    })
   }
 
   handleAddClick = (id) => {
@@ -76,7 +81,7 @@ class App extends React.Component {
           recipes={this.state.recipes}
         />
       case "CookingPage":
-        return <CookingPage currentKitchenShow={this.state.currentKitchenShow} />
+        return <CookingPage currentKitchenShow={this.state.currentKitchenShow} handleDoneClick={this.handleDoneClick}/>
       default:
         return <div>Sorry Bro</div>
     }

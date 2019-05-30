@@ -29,16 +29,22 @@ class RecipeCooking extends React.Component{
               </Card>
             }
 
-            {(i.progress === 2) &&
+            {i.progress === 2 &&
               <Timer>
                 {({ start, resume, pause, stop, reset, timerState }) => (
                 <Card className="centered" onClick={() => {this.nextProgress(i.id); this.props.update()}} key={i.id} >
                   <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
-                  {`est: ` + i.duration + ` minutes`}
-                    <p><Timer.Minutes />:<Timer.Seconds formatValue={(value) => (value < 10 ? `0${value}` : value)}/> Seconds </p>
+                    <p><Timer.Minutes />:<Timer.Seconds formatValue={(value) => (value < 10 ? `0${value}` : value)}/>  </p>
                 </Card>
                 )}
               </Timer>
+            }
+
+            {i.progress === 3 &&
+                <Card className="centered" onClick={() => {this.nextProgress(i.id); this.props.update()}} key={i.id} >
+                  <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
+                    <p> Completed! </p>
+                </Card>
             }
 
           </div>
