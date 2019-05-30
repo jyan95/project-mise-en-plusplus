@@ -6,7 +6,7 @@ class KitchenIndexSide extends React.Component {
 
   render(){
     return (
-      <div className="ui-items">
+      <div className="raised ui-items">
         <h1>
           Your Kitchens
         </h1>

@@ -8,7 +8,7 @@ class KitchenShowMain extends React.Component {
     return (
       <div className="ui container">
         <h1> Recipes </h1>
-        {this.props.recipes.map(recipe => <RecipeMainCard recipe={recipe} handleAddClick={this.props.handleAddClick} key={recipe.id}/>)}
+        {this.props.recipes.map(recipe => <RecipeMainCard recipe={recipe} handleAddClick={this.props.handleAddClick} key={recipe.id} fluid/>)}
       </div>
     )
   }

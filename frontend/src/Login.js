@@ -27,7 +27,7 @@ const Login = (props) => {
   return(
     <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as='h2' color='grey' textAlign='center'>
+        <Header id='app-name' as='h1' color='white' textAlign='center'>
            welcome to mise en ++
         </Header>
         <Form size='large' onSubmit={props.handleSubmit}>
