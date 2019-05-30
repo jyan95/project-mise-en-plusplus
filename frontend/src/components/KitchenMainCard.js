@@ -4,7 +4,9 @@ import { Card, Grid } from 'semantic-ui-react';
 const KitchenMainCard = props => {
   console.log(props.recipe)
   return (
-    <Card className="ui centered card">
+
+    <div className="ui raised card centered ">
+
       <h2>{props.recipe.name}</h2>
       <Grid>
         <Grid.Column width={8}>

@@ -6,6 +6,9 @@ import Login from './Login';
 import api from './services/api';
 
 const USERS_URL = 'http://localhost:3000/users';
+const divStyle = {
+  backgroundColor: '#ffe6e6'
+}
 
 class App extends React.Component {
   state = {
@@ -148,7 +151,7 @@ class App extends React.Component {
 
   render() {
     return (
-    <div>
+    <div style={divStyle}>
       {this.state.loggedIn ? this.renderPage() : <Login username={this.state.username} handleSubmit={this.handleSubmit} handleInput={this.handleInput}/>}
     </div>
     );

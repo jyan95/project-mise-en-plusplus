@@ -7,7 +7,7 @@ const RecipeMainCard = props => {
 
   return (
 
-    <div className="ui card centered ">
+    <div className="ui raised card centered">
       <div className="ui right labeled button" role="button" tabIndex="0">
         <Button className="ui icon button" onClick={() => props.handleAddClick(props.recipe.id)}>
           <i aria-hidden="true" className="add icon"></i>
