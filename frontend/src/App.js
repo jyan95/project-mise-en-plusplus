@@ -80,7 +80,7 @@ class App extends React.Component {
   };
 
   handleSubmit = (e) => {
-    let loginField = document.getElementById('loginField');
+    // let loginField = document.getElementById('loginField');
     // console.log('input field in App', loginField.value)
     // console.log('posting in App', this.state);
     fetch(USERS_URL, {
@@ -99,8 +99,12 @@ class App extends React.Component {
         username: '',
         currentUser: data
       })
+      console.log('App state after fetch',this.state);
     })//end of thens
-    console.log('App state after fetch',this.state);
+  };
+
+  logout = () => {
+    this.setState({loggedIn: false})
   };
 
   renderPage = () => {
@@ -114,9 +118,14 @@ class App extends React.Component {
           handleDeleteClick={this.handleDeleteClick}
           kitchens={this.state.kitchens}
           recipes={this.state.recipes}
+          handleLogout={this.logout}
+          currentUser={this.state.currentUser}
         />
       case "CookingPage":
-        return <CookingPage currentKitchenShow={this.state.currentKitchenShow} handleDoneClick={this.handleDoneClick}/>
+        return <CookingPage
+          currentKitchenShow={this.state.currentKitchenShow} handleDoneClick={this.handleDoneClick}
+          currentUser={this.state.currentUser}
+        />
       default:
         return <div>Sorry Bro</div>
     }
@@ -135,7 +144,7 @@ class App extends React.Component {
   render() {
     return (
     <div>
-      {this.state.loggedIn ? {this.renderPage()} : <Login username={this.state.username} handleSubmit={this.handleSubmit} handleInput={this.handleInput}/>}
+      {this.state.loggedIn ? this.renderPage() : <Login username={this.state.username} handleSubmit={this.handleSubmit} handleInput={this.handleInput}/>}
     </div>
     );
   }
