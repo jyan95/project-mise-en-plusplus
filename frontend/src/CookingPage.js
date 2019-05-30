@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from './containers/Navbar';
 import RecipeCooking from './components/RecipeCooking';
 import { Grid, Segment } from 'semantic-ui-react';
+import Timer from 'react-compound-timer'
 
  // this.props.currentKitchenShow
 
@@ -30,6 +31,11 @@ class CookingPage extends React.Component{
     return(
       <React.Fragment>
         <Navbar/>
+        <h2>Time Elapsed: 
+          {<Timer>
+            <Timer.Minutes />:<Timer.Seconds formatValue={(value) => (value < 10 ? `0${value}` : value)}/> Seconds
+          </Timer>}
+        </h2>
         <Segment>
           <Grid>
             <Grid.Row className='ui center aligned container'>

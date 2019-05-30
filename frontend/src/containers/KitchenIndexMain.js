@@ -2,6 +2,7 @@ import React from "react";
 import KitchenMainCard from "../components/KitchenMainCard";
 import { Button } from 'semantic-ui-react';
 
+
 class KitchenIndexMain extends React.Component {
 
   handleKitchenClick = () => {
@@ -15,9 +16,6 @@ class KitchenIndexMain extends React.Component {
 
     return (
       <div>
-        <Timer>
-          <Timer.Seconds />
-        </Timer>
         <h1> Kitchen Details </h1>
         <h2>{ name }</h2>
 

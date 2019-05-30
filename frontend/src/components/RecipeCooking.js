@@ -1,5 +1,6 @@
 import React from 'react';
 import { Container, Header, Card } from 'semantic-ui-react';
+import Timer from 'react-compound-timer'
 
 class RecipeCooking extends React.Component{
 
@@ -19,19 +20,29 @@ class RecipeCooking extends React.Component{
       <Container>
         <Header as='h3'>{name}</Header>
         {instructions.map((i, index) => (
-          <Card
-            className="centered"
-            onClick={() => {
-              this.nextProgress(i.id);
-              this.props.update()
-            }}
-            key={i.id}
-          >
-            <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
-            {`est: ` + i.duration + ` minutes`}
+          <div>
 
-          </Card>
-        
+            {i.progress === 1 &&
+              <Card className="centered" onClick={() => {this.nextProgress(i.id); this.props.update()}} key={i.id} >
+                <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
+                {`est: ` + i.duration + ` minutes`}
+              </Card>
+            }
+
+            {(i.progress === 2) &&
+              <Timer>
+                {({ start, resume, pause, stop, reset, timerState }) => (
+                <Card className="centered" onClick={() => {this.nextProgress(i.id); this.props.update()}} key={i.id} >
+                  <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
+                  {`est: ` + i.duration + ` minutes`}
+                    <p><Timer.Minutes />:<Timer.Seconds formatValue={(value) => (value < 10 ? `0${value}` : value)}/> Seconds </p>
+                </Card>
+                )}
+              </Timer>
+            }
+
+          </div>
+
         ))}
       </Container>
     )
