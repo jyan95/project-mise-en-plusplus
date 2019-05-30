@@ -14,7 +14,7 @@ class KitchenDetailSideCard extends React.Component {
   }
 
   render(){
-    const { id, name, ingredients } = this.props.recipe;
+    const { name, ingredients } = this.props.recipe;
     return (
 
       <div className="ui card centered ">
