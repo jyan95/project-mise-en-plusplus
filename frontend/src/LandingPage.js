@@ -32,10 +32,12 @@ class LandingPage extends React.Component {
     return (
       <React.Fragment>
 
+
         <Navbar
           user = {this.state.currentUser}
           changeRenderPairToIndex = {this.changeRenderPairToIndex}
         />
+
         <Grid>
           <Grid.Row className="ui center aligned container">
             <Grid.Column width={5}>
