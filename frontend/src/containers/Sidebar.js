@@ -20,6 +20,7 @@ class Sidebar extends React.Component {
     switch (this.props.renderPair) {
       case 'kitchenIndex':
         return <KitchenIndexSide
+          handleNewKitchen={this.props.handleNewKitchen}
           kitchens={kitchens}
           showKitchenDetails={this.props.showKitchenDetails}
         />
