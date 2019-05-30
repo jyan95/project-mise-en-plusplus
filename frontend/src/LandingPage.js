@@ -8,8 +8,8 @@ import Sidebar from './containers/Sidebar';
 
 class LandingPage extends React.Component {
   state = {
-    currentUser: 'josh',
-    signedIn: true,
+    // currentUser: 'josh',
+    // signedIn: true,
     renderPair: 'kitchenIndex',
     // if kitchenIndex = kitchens index in sidebar and welcome message in MainContainer
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
@@ -31,10 +31,10 @@ class LandingPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-
         <Navbar
           user = {this.state.currentUser}
           changeRenderPairToIndex = {this.changeRenderPairToIndex}
+          handleLogout = {this.props.handleLogout}
         />
         <Grid>
           <Grid.Row className="ui center aligned container">

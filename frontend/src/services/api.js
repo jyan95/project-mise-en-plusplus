@@ -14,6 +14,27 @@ const getRecipes = () => {
   return get(`${API_BASE}/recipes`)
 }
 
+// const loginUser = () => {
+//   return fetch(`${API_BASE}/users`, {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json',
+//       'Accept': 'application/json'
+//     },
+//     body: JSON.stringify({username:this.state.username})
+//   })
+//   .then(r => r.json())
+//   .then(data => {
+//     console.log(data);
+//     this.setState({
+//       loggedIn: true,
+//       username: '',
+//       currentUser: data
+//     })
+//     console.log('App state after fetch',this.state);
+//   })
+// }
+
 const addDish = (data) => {
   return fetch(`${API_BASE}/dishes`,{
     method: 'POST',

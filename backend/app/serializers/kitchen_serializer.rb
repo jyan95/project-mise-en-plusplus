@@ -2,7 +2,7 @@ class KitchenSerializer < ActiveModel::Serializer
   # belongs_to :user
   # has_many :dishes
   has_many :recipes, through: :dishes
-  attributes :id, :name, :dishes
+  attributes :id, :name, :dishes, :user_id 
 
   def dishes
     self.object.dishes.map do |d|

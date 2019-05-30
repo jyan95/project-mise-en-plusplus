@@ -8,7 +8,7 @@ import Timer from 'react-compound-timer'
 
 class CookingPage extends React.Component{
 
-  recipes = this.props.currentKitchenShow.recipes; //this.props.kitchen
+  recipes = this.props.currentKitchenShow.recipes;
 
   state = {
     todos: this.recipes.filter(r => (r.instructions.some(i => (i.progress === 1)))),
@@ -62,7 +62,7 @@ class CookingPage extends React.Component{
             </Grid.Row>
           </Grid>
         </Segment>
-        <h2 align="center" ><button onClick={this.props.handleDoneClick} class="ui secondary button">Finish Cooking</button></h2>
+        <h2 align="center" ><button onClick={this.props.handleDoneClick} className="ui secondary button">Finish Cooking</button></h2>
       </React.Fragment>
     )
   }
