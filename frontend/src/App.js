@@ -119,9 +119,13 @@ class App extends React.Component {
           kitchens={this.state.kitchens}
           recipes={this.state.recipes}
           handleLogout={this.logout}
+          currentUser={this.state.currentUser}
         />
       case "CookingPage":
-        return <CookingPage currentKitchenShow={this.state.currentKitchenShow} handleDoneClick={this.handleDoneClick}/>
+        return <CookingPage
+          currentKitchenShow={this.state.currentKitchenShow} handleDoneClick={this.handleDoneClick}
+          currentUser={this.state.currentUser}
+        />
       default:
         return <div>Sorry Bro</div>
     }
