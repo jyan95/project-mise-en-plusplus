@@ -14,26 +14,6 @@ const getRecipes = () => {
   return get(`${API_BASE}/recipes`)
 }
 
-// const loginUser = () => {
-//   return fetch(`${API_BASE}/users`, {
-//     method: 'POST',
-//     headers: {
-//       'Content-Type': 'application/json',
-//       'Accept': 'application/json'
-//     },
-//     body: JSON.stringify({username:this.state.username})
-//   })
-//   .then(r => r.json())
-//   .then(data => {
-//     console.log(data);
-//     this.setState({
-//       loggedIn: true,
-//       username: '',
-//       currentUser: data
-//     })
-//     console.log('App state after fetch',this.state);
-//   })
-// }
 
 const addDish = (data) => {
   return fetch(`${API_BASE}/dishes`,{
@@ -53,14 +33,28 @@ const deleteDish = (id) => {
   return fetch(`${API_BASE}/dishes/${id}`, {
     method: 'delete'
   })
+}
 
+const addKitchen = (data) => {
+  return fetch(`${API_BASE}/kitchens`,{
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      name: data.name,
+      user_id: data.user_id
+    })
+  }).then(resp => resp.json())
 }
 
 const api = {
   addDish,
   deleteDish,
   getKitchens,
-  getRecipes
+  getRecipes,
+  addKitchen
 }
 
 export default api;

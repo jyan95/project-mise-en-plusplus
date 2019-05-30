@@ -35,9 +35,23 @@ class App extends React.Component {
     })
   };
 
-  handleNewKitchen = () => {
-    console.log('clicked')
+  handleNewKitchen = (e, name) => {
+    e.preventDefault();
+    api.addKitchen({name: name, user_id:this.state.currentUser.id})
+    .then(data => this.setState({kitchens:[...this.state.kitchens, data]}))
   }
+  // handleNewKitchen = (e, name) => {
+  //   e.preventDefault();
+  //   api.addKitchen({name: name, user_id:this.state.currentUser.id})
+  //   .then(()=> {
+  //     api.getKitchens()
+  //     .then(kitchens => {
+  //       this.setState({
+  //         kitchens: this.state.kitchens.filter(k=>(k.user_id===this.state.currentUser.id))
+  //       })
+  //     })
+  //   })
+  // }
 
 
   handleDoneClick = () => {
