@@ -25,7 +25,7 @@ class App extends React.Component {
       }
     })
   }
-  
+
   handleDoneClick = () => {
     this.setState({
       page: 'LandingPage'

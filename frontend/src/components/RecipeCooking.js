@@ -24,7 +24,7 @@ class RecipeCooking extends React.Component{
 
             {i.progress === 1 &&
               <Card className="centered" onClick={() => {this.nextProgress(i.id); this.props.update()}} key={i.id} >
-                <h5>{i.action + ` the ` + ingredients[index].ingredient}</h5>
+                <h5>{i.action + ` the ` + ingredients[i].ingredient}</h5>
                 {`est: ` + i.duration + ` minutes`}
               </Card>
             }

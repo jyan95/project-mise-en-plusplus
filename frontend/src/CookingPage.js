@@ -1,7 +1,7 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
 import RecipeCooking from './components/RecipeCooking';
-import { Grid, Segment, Button } from 'semantic-ui-react';
+import { Grid, Segment } from 'semantic-ui-react';
 import Timer from 'react-compound-timer'
 
  // this.props.currentKitchenShow
