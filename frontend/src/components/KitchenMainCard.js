@@ -5,7 +5,7 @@ const KitchenMainCard = props => {
   console.log(props.recipe)
   return (
 
-    <div className="ui raised card centered ">
+    <div className="ui raised card">
 
       <h2>{props.recipe.name}</h2>
       <Grid>
@@ -22,7 +22,7 @@ const KitchenMainCard = props => {
           })}
         </Grid.Column>
       </Grid>
-    </Card>
+    </div>
   )
 }
 
