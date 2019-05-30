@@ -8,7 +8,7 @@ import Timer from 'react-compound-timer'
 
 class CookingPage extends React.Component{
 
-  recipes = this.props.currentKitchenShow.recipes; //this.props.kitchen
+  recipes = this.props.currentKitchenShow.recipes;
 
   state = {
     todos: this.recipes.filter(r => (r.instructions.some(i => (i.progress === 1)))),
