@@ -35,6 +35,11 @@ class App extends React.Component {
     })
   };
 
+  handleNewKitchen = () => {
+    console.log('clicked')
+  }
+
+
   handleDoneClick = () => {
     this.setState({
       page: 'LandingPage'
@@ -55,7 +60,6 @@ class App extends React.Component {
   };
 
   handleDeleteClick = (id) => {
-    alert('Recipe removed from Kitchen!')
     const dish = this.state.currentKitchenShow.dishes.find(dish=>{
       return dish.recipe_id === id && dish.kitchen_id === this.state.currentKitchenShow.id
     })
@@ -97,15 +101,12 @@ class App extends React.Component {
     })
     .then(r => r.json())
     .then(data => {
-      console.log(data);
-      console.log('kitchens of josh',data.kitchens);
       this.setState({
         loggedIn: true,
         username: '',
         currentUser: data,
         kitchens: this.state.kitchens.filter(k=>(k.user_id===data.id))
       })
-      console.log('App state after fetch',this.state);
     })//end of thens
   };
 
@@ -117,6 +118,7 @@ class App extends React.Component {
     switch(this.state.page){
       case "LandingPage":
         return <LandingPage
+          handleNewKitchen={this.handleNewKitchen}
           handleCookClick={this.handleCookClick}
           currentKitchenShow={this.state.currentKitchenShow}
           showKitchenDetails={this.showKitchenDetails}
@@ -141,13 +143,6 @@ class App extends React.Component {
     console.log('fetching kitchens');
     api.getKitchens()
     .then(kitchens => this.setState({kitchens}))
-    // .then(data => {
-    //   console.log(data[0].user);
-    //   console.log(this.state.currentUser);
-    //   let kitchens = data.filter(k => (k.user === this.state.currentUser));
-    //   this.setState({kitchens})
-    // })
-
 
     api.getRecipes()
     .then(recipes => this.setState({recipes}))

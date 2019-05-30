@@ -1,6 +1,6 @@
 import React from "react";
 import KitchenMainCard from "../components/KitchenMainCard";
-import { Button } from 'semantic-ui-react';
+import { Button, Card } from 'semantic-ui-react';
 
 
 class KitchenIndexMain extends React.Component {
@@ -18,12 +18,12 @@ class KitchenIndexMain extends React.Component {
       <div>
         <h1> Kitchen Details </h1>
         <h2>{ name }</h2>
-
         {this.props.currentKitchenShow && <Button onClick={this.handleKitchenClick}>Select Meal</Button>}
         {this.props.currentKitchenShow &&
           recipes.map(recipe =>{
           return <KitchenMainCard recipe={recipe} className='ui fluid card'/>
         })}
+
       </div>
     )
   }
