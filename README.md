@@ -1,23 +1,33 @@
 # mise en ++
-Welcome to mise en ++ - a web app built with JS React frontend and Ruby on Rails backend
+A single page web app designed to help with your kitchen adventures!
 
-## Description
-mise en ++ is an app designed to help with your culinary endeavors. 
+## Motivation
 
-You can create multiple kitchens find recipes to associate / attach to each kitchen. 
-When you're ready, enter a kitchen and 
+We wanted to create something to help stay organized when it came to cooking multiple dishes and keeping track of their ingredients and processes.
 
-## Install Instructions
-1. Clone this repository
-2. Navigate to `/backend` 
-3. If you do not have Ruby, [get it here](https://www.ruby-lang.org/en/documentation/installation/)
-4. Run `gem install bundler`
-5. Run `bundle` or `bundle install`
-6. Run `rails db:migrate` and `rails db:seed`
-7. Run `rails s`
-8. Navigate to `/frontend`
-9. Run `npm install`
-10. Run `npm start` 
+## Tech stack
+
+<b>Built with</b>
+- [React.js](https://reactjs.org/) Frontend
+- [Ruby on Rails](https://rubyonrails.org/) Backend 
+- [Semantic](https://react.semantic-ui.com/)
+
+## Features
+
+- dynamic to-do lists separated by stage to more easily keep track of recipe ingredients / instructions
+- homemade API for recipes, ingredients, and instructions
+  
+## Installation
+
+1. Clone this repository and navigate to `/backend`, and run `gem install bundler`, then `bundle`
+2. run `rails db:migrate` and `rails db:seed`, then run `rails s` (it will default to localhost:3000
+3. navigate to `/frontend` and run `npm install`, then `npm start` - it will prompt you to run on another port, hit `y`
+4. if it does not automatically open in your browser, navigate to http://localhost:3001
 
 ### Contributors
 [sungchaan](https://github.com/sungchaan), [jyan95](https://github.com/jyan95)
+
+### License
+This code is free to use under the terms of the MIT license.
+
+
