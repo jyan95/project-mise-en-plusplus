@@ -3,6 +3,8 @@ A single page web app designed to help with your kitchen adventures!
 
 ![Screenshot](https://i.imgur.com/p9mCAIP.png)
 
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 ## Motivation
 
 We wanted to create something to help stay organized when it came to cooking multiple dishes and keeping track of their respective ingredients and instructions.
