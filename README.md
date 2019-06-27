@@ -3,7 +3,7 @@ A single page web app designed to help with your kitchen adventures!
 
 ## Motivation
 
-We wanted to create something to help stay organized when it came to cooking multiple dishes and keeping track of their ingredients and processes.
+We wanted to create something to help stay organized when it came to cooking multiple dishes and keeping track of their respective ingredients and instructions.
 
 ## Tech stack
 
@@ -20,7 +20,7 @@ We wanted to create something to help stay organized when it came to cooking mul
 ## Installation
 
 1. Clone this repository and navigate to `/backend`, and run `gem install bundler`, then `bundle`
-2. run `rails db:migrate` and `rails db:seed`, then run `rails s` (it will default to localhost:3000
+2. run `rails db:migrate` and `rails db:seed`, then run `rails s` (it will default to http://localhost:3000)
 3. navigate to `/frontend` and run `npm install`, then `npm start` - it will prompt you to run on another port, hit `y`
 4. if it does not automatically open in your browser, navigate to http://localhost:3001
 
