@@ -26,7 +26,7 @@ class App extends React.Component {
       page: 'CookingPage',
       currentKitchenShow: {
         ...this.state.currentKitchenShow, recipes:
-          this.state.currentKitchenShow.recipes.map((recipe, i)=>{
+          this.state.currentKitchenShow.recipes.map((recipe, i) => {
             return ({...recipe, instructions: recipe.instructions.map(instruction =>{
               return ({...instruction, progress: 1})
             })})
@@ -149,12 +149,12 @@ class App extends React.Component {
           currentUser={this.state.currentUser}
         />
       default:
-        return <div>Sorry Bro</div>
+        return <div>Sorry!</div>
     }
   }
 
   componentDidMount(){
-    console.log('fetching kitchens');
+    // console.log('fetching kitchens');
     api.getKitchens()
     .then(kitchens => this.setState({kitchens}))
 

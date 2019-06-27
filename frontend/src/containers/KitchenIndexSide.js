@@ -1,7 +1,7 @@
 import React from "react";
 import KitchenSideCard from "../components/KitchenSideCard";
 import './Sidebar.css'
-import { Button, Popup, Input, Form} from 'semantic-ui-react'
+import { Button, Popup, Input } from 'semantic-ui-react'
 
 class KitchenIndexSide extends React.Component {
 

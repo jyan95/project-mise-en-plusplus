@@ -20,7 +20,7 @@ class MainContainer extends React.Component {
           handleAddClick={this.props.handleAddClick}
         />
       default:
-        return <div>Sorry Bro</div>
+        return <div>Sorry!</div>
     }
   }
 

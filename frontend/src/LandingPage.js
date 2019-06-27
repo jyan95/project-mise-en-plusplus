@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from './containers/Navbar';
-import {Grid} from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 import MainContainer from './containers/MainContainer';
 import Sidebar from './containers/Sidebar';
@@ -15,13 +15,14 @@ class LandingPage extends React.Component {
     // if kitchenShow = kitchen show in sidebar and recipes in MainContainer
   }
 
-  changeRenderPairToIndex= () => {
+  changeRenderPairToIndex = () => {
+    // console.log('clicking');
     this.setState({
       renderPair: 'kitchenIndex'
     })
   }
 
-  changeRenderPair = () =>{
+  changeRenderPairToShow = () => {
     this.setState({
       renderPair: 'kitchenShow'
     })
@@ -57,7 +58,7 @@ class LandingPage extends React.Component {
                 kitchens={this.props.kitchens}
                 recipes={this.props.recipes}
                 currentKitchenShow={this.props.currentKitchenShow}
-                changeRenderPair={this.changeRenderPair}
+                changeRenderPair={this.changeRenderPairToShow}
               />
             </Grid.Column>
           </Grid.Row>
