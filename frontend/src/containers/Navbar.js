@@ -4,11 +4,11 @@ import { Menu } from 'semantic-ui-react';
 class Navbar extends React.Component {
   state = {}
 
-  handleItemClick = (e, { name }) => this.setState({ activeItem: name })
+  handleTabClick = (e, { name }) => this.setState({ activeItem: name })
 
-  handleKitchenClick = () => {
-    this.props.changeRenderPairToIndex()
-  }
+  // handleKitchenClick = () => {
+  //   this.props.changeRenderPairToIndex();
+  // }
 
   render() {
     const { activeItem } = this.state;
@@ -19,24 +19,12 @@ class Navbar extends React.Component {
           <Menu.Item
             name='home'
             active={activeItem === 'home'}
-            onClick={this.handleItemClick}
+            onClick={(e, name) => {this.handleTabClick(e, name); this.props.changeRenderPairToIndex()} }
           >
             Home
           </Menu.Item>
 
-          <Menu.Item
-            name='kitchens'
-            active={activeItem === 'kitchens'} onClick={this.handleKitchenClick}>
-            Kitchens
-          </Menu.Item>
 
-          <Menu.Item
-            name='recipes'
-            active={activeItem === 'recipes'}
-            onClick={this.handleItemClick}
-          >
-            Recipes
-          </Menu.Item>
           <Menu.Menu position='right'>
             <Menu.Item
               name='logout'

@@ -1,8 +1,8 @@
 import React from 'react';
-import { Card, Grid } from 'semantic-ui-react';
+import { Grid } from 'semantic-ui-react';
 
 const KitchenMainCard = props => {
-  console.log(props.recipe)
+  //console.log(props.recipe)
   return (
 
     <div className="ui raised card">
