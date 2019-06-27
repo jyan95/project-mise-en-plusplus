@@ -1,6 +1,8 @@
 # mise en ++
 A single page web app designed to help with your kitchen adventures!
 
+![Screenshot](https://i.imgur.com/p9mCAIP.png)
+
 ## Motivation
 
 We wanted to create something to help stay organized when it came to cooking multiple dishes and keeping track of their respective ingredients and instructions.
