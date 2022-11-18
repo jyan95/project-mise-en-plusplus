@@ -6,7 +6,7 @@
     "react": "^16.8.6",
     "react-compound-timer": "^1.0.13",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
+    "react-scripts": "5.0.1",
     "semantic-ui-react": "^0.87.1"
   },
   "scripts": {
